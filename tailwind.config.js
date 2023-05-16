@@ -6,6 +6,9 @@ export default {
       backgroundColor: {
         'bg-light': '#eaeaea;',
       },
+      width: {
+        900: '900px',
+      },
     },
   },
   plugins: [],

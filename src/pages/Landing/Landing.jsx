@@ -13,7 +13,10 @@ function Landing() {
           />
         </div>
         <div className='text-center absolute w-44 reveal-text'>
-          <Link className='leading-9 landing-btn-hover transition-all cursor-pointer text-3xl font-bold text-center reveal-text'>
+          <Link
+            to='/privateinfo'
+            className='leading-9 landing-btn-hover transition-all cursor-pointer text-3xl font-bold text-center reveal-text'
+          >
             კითხვარის დაწყება
           </Link>
         </div>
