@@ -13,6 +13,11 @@ body {
   font-family: 'bpg arial';
 }
 
+.landing-btn-hover:hover {
+  text-shadow: 2px 0px black;
+  -webkit-text-stroke: 1px white;
+}
+
 .zoom {
   animation: zoom-out 2s ease-in-out forwards;
 }
