@@ -25,6 +25,12 @@ body {
   animation: reveal-text 2s ease-in-out forwards;
   animation-delay: 2s;
 }
+
+.rectangle {
+  animation: toRectangle 1s ease-out forwards;
+  fill: rgb(214, 209, 110);
+}
+
 @keyframes zoom-out {
   from {
     transform: scale(100);
@@ -40,5 +46,25 @@ body {
   }
   to {
     bottom: -80px;
+  }
+}
+
+@keyframes toRectangle {
+  0% {
+    transform: translate(-50%, 40%);
+    width: 100px;
+    height: 100px;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(0, 0);
+    width: 70%;
+    height: 75px;
+    border-radius: 0;
+    rx: 0;
+    ry: 0;
+    opacity: 0;
   }
 }
