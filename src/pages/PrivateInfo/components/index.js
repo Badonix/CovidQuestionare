@@ -1,1 +1,2 @@
-export { default as PrivateInfoForm } from './PrivateInfoForm';
+export * from './PrivateInfoForm';
+export * from './PrivateInfoNavigation';

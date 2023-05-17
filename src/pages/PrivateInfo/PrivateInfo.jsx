@@ -1,13 +1,13 @@
 import React from 'react';
 import { FormWrapper } from '../../components';
-import { PrivateInfoForm } from './components';
+import { PrivateInfoForm, PrivateInfoNavigation } from './components';
 function PrivateInfo() {
   return (
     <FormWrapper>
       <PrivateInfoForm />
-      <div className='z-10 image-container relative'>
+      <div className='image-container relative'>
         <svg
-          className='w-full z-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+          className='w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 900 600'
         >
@@ -19,6 +19,7 @@ function PrivateInfo() {
           alt='doctors'
         />
       </div>
+      <PrivateInfoNavigation />
     </FormWrapper>
   );
 }
