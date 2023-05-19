@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormWrapper } from '../../components';
-import { PrivateInfoForm, PrivateInfoNavigation } from './components';
-function PrivateInfo() {
+import { VaccineForm, VaccineNavigation } from './components';
+function Vaccine() {
   return (
     <FormWrapper>
-      <PrivateInfoForm />
+      <VaccineForm />
       <div className='flex justify-end image-container relative'>
         <svg
           className='w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
@@ -14,14 +14,14 @@ function PrivateInfo() {
           <rect className='rectangle absolute' x='13%' y='70px' />
         </svg>
         <img
-          src='/assets/privateinfo.png'
+          src='/assets/doctor.png'
           className='h-full pl-24 py-12'
-          alt='doctors'
+          alt='doctor'
         />
       </div>
-      <PrivateInfoNavigation />
+      <VaccineNavigation />
     </FormWrapper>
   );
 }
 
-export default PrivateInfo;
+export default Vaccine;

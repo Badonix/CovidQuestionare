@@ -7,7 +7,9 @@ function FormWrapper(props) {
         <img className='h-6' src='/assets/redberry.png' alt='redberry' />
         <p className='text-4xl'>1/4</p>
       </div>
-      <div className='flex w-full justify-between'>{props.children}</div>
+      <div className='flex max-h-screen350 justify-between'>
+        {props.children}
+      </div>
     </section>
   );
 }

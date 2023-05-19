@@ -9,7 +9,12 @@ export default {
       width: {
         900: '900px',
       },
+      maxHeight: {
+        screen350: 'calc(100vh - 350px)',
+      },
+      maxWidth: {
+        230: '230px',
+      },
     },
   },
-  plugins: [],
 };

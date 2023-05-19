@@ -12,6 +12,10 @@ body {
   overflow: hidden;
   font-family: 'bpg arial';
 }
+input[type='radio'] {
+  accent-color: black;
+  flex-shrink: 0;
+}
 
 .landing-btn-hover:hover {
   text-shadow: 2px 0px black;
