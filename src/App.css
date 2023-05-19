@@ -7,6 +7,9 @@
   src: url('/public/fonts/bpg_arial_2009.ttf');
 }
 
+::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+}
 body {
   background-color: #eaeaea;
   overflow: hidden;
