@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Landing, PrivateInfo, Vaccine, Tips } from './pages';
+import { Landing, PrivateInfo, Vaccine, Tips, Thanks } from './pages';
 import { CovidCondition } from './pages/CovidCondition';
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <Route path='/covid-condition' element={<CovidCondition />} />
         <Route path='/vaccine' element={<Vaccine />} />
         <Route path='/tips' element={<Tips />} />
+        <Route path='/thanks' element={<Thanks />} />
       </Routes>
     </BrowserRouter>
   );

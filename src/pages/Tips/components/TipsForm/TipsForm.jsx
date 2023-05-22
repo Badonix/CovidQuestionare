@@ -3,7 +3,7 @@ import React from 'react';
 function TipsForm() {
   return (
     <>
-      <form className='scrollbar-thumb-slate-400 scrollbar-track-slate-100 scrollbar-thin  overflow-y-auto overflow-x-hidden w-full h-auto max-w-lg flex flex-col'>
+      <form className='scrollbar-thumb-slate-400 scrollbar-track-slate-100 scrollbar-thin  overflow-y-auto overflow-x-hidden w-full h-auto flex flex-col'>
         <div className='flex flex-col gap-11'>
           <div className='mt-5'>
             <p>

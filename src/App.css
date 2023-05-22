@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'bpg arial';
-  src: url('/public/fonts/bpg_arial_2009.ttf');
+  src: url('/fonts/bpg_arial_2009.ttf');
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,6 +36,56 @@ input[type='radio'] {
 .rectangle {
   animation: toRectangle 1s ease-out forwards;
   fill: rgb(214, 209, 110);
+}
+
+.thanks-container{
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.big-star{
+  animation: bigStar .5s forwards ease;
+  animation-delay: 2s;
+  scale:0;
+}
+.small-star{
+  animation: smallStar .5s forwards ease;
+  animation-delay: 2s;
+  scale:0;
+
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+@keyframes smallStar{
+  0% {
+    right:50px;
+    bottom:10px;
+    scale:0;
+  }
+  100%{
+    bottom: -3.5rem;
+    right:1rem;
+    scale:1
+  }
+}
+@keyframes bigStar{
+  0% {
+    left:50px;
+    top:10px;
+    scale:0;
+  }
+  100%{
+    top: -4rem; 
+    left: 1rem;
+    scale:1
+  }
 }
 
 @keyframes zoom-out {
