@@ -25,6 +25,68 @@ input[type='radio'] {
   -webkit-text-stroke: 1px white;
 }
 
+.circle-to-rectangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  background-color: rgba(130, 9, 9, 0.675);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: circle-to-rectangle 0.5s ease-out forwards;
+}
+
+.rectangle-to-circle {
+  position: absolute;
+  border-radius: 0;
+  background-color: rgba(255, 255, 0, 0.271);
+  width: 700px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 250px;
+  transform: translateX(100px);
+  animation: rectangle-to-circle 0.5s ease-out forwards;
+}
+
+.circle-to-star {
+  position: absolute;
+  top: 45%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(130, 9, 9, 0.675);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: circle-to-star .5s ease-out forwards;
+}
+
+.star-to-heart{
+  position: absolute;
+  top: 45%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(130, 9, 9, 0.675);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: star-to-heart .5s ease-in-out forwards;
+}
+
+@keyframes star-to-heart{
+  100%{
+    background-color: rgba(255, 97, 97, 0.87);
+    height: 180px;
+    width: 180px;
+    opacity: 0;
+    top: 250px;
+    transform: translateX(100px);
+  }
+}
+
+
 .zoom {
   animation: zoom-out 2s ease-in-out forwards;
 }
@@ -33,58 +95,98 @@ input[type='radio'] {
   animation-delay: 2s;
 }
 
-.rectangle {
-  animation: toRectangle 1s ease-out forwards;
-  fill: rgb(214, 209, 110);
-}
-
-.thanks-container{
+.thanks-container {
   animation: fadeIn 2s ease-out forwards;
 }
 
-.big-star{
-  animation: bigStar .5s forwards ease;
+.big-star {
+  animation: bigStar 0.5s forwards ease;
   animation-delay: 2s;
-  scale:0;
+  scale: 0;
 }
-.small-star{
-  animation: smallStar .5s forwards ease;
+.small-star {
+  animation: smallStar 0.5s forwards ease;
   animation-delay: 2s;
-  scale:0;
-
+  scale: 0;
 }
 
-@keyframes fadeIn{
-  0%{
-    opacity:0;
+
+
+@keyframes circle-to-star{
+  50%{
+    opacity: .8
+  }
+  70%{
+    scale:1
   }
   100%{
-    opacity:1;
-  }
-}
-
-@keyframes smallStar{
-  0% {
-    right:50px;
-    bottom:10px;
+    background-color: rgba(255, 255, 0, 0.271);
+    top:200px;
+    transform:translateX(50px);
     scale:0;
   }
-  100%{
+}
+
+@keyframes circle-to-rectangle {
+  100% {
+    border-radius: 0;
+    background-color: rgba(255, 255, 0, 0.271);
+    width: 700px;
+    height: 80px;
+    opacity: 0;
+    top: 250px;
+    transform: translateX(100px);
+  }
+}
+
+@keyframes rectangle-to-circle {
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    position: absolute;
+    top: 45%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(130, 9, 9, 0.675);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes smallStar {
+  0% {
+    right: 50px;
+    bottom: 10px;
+    scale: 0;
+  }
+  100% {
     bottom: -3.5rem;
-    right:1rem;
-    scale:1
+    right: 1rem;
+    scale: 1;
   }
 }
-@keyframes bigStar{
+@keyframes bigStar {
   0% {
-    left:50px;
-    top:10px;
-    scale:0;
+    left: 50px;
+    top: 10px;
+    scale: 0;
   }
-  100%{
-    top: -4rem; 
+  100% {
+    top: -4rem;
     left: 1rem;
-    scale:1
+    scale: 1;
   }
 }
 
@@ -103,25 +205,5 @@ input[type='radio'] {
   }
   to {
     bottom: -80px;
-  }
-}
-
-@keyframes toRectangle {
-  0% {
-    transform: translate(-50%, 40%);
-    width: 100px;
-    height: 100px;
-  }
-  80% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(0, 0);
-    width: 70%;
-    height: 75px;
-    border-radius: 0;
-    rx: 0;
-    ry: 0;
-    opacity: 0;
   }
 }
