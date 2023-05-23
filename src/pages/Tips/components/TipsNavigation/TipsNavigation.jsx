@@ -6,9 +6,6 @@ function TipsNavigation() {
       <Link to='/vaccine'>
         <img src='/assets/LeftArrow.svg' alt='left arrow' />
       </Link>
-      <Link to='/thanks'>
-        <img src='/assets/RightArrow.svg' alt='right arrow' />
-      </Link>
     </div>
   );
 }

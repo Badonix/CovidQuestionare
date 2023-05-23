@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function TipsForm() {
   return (
     <>
-      <form className='scrollbar-thumb-slate-400 scrollbar-track-slate-100 scrollbar-thin  overflow-y-auto overflow-x-hidden w-full h-auto flex flex-col'>
+      <form className='relative overflow-y-auto overflow-x-hidden w-full h-auto flex flex-col'>
         <div className='flex flex-col gap-11'>
           <div className='mt-5'>
             <p>
@@ -74,13 +74,22 @@ function TipsForm() {
             </label>
             <textarea className='h-44 border border-neutral-700 p-2'></textarea>
           </div>
-          <div className='flex flex-col gap-5 pt-4'>
+          <div className='relative flex flex-col gap-5 pt-4'>
             <label className='text-xl font-bold'>
               რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას
               შეცვლიდი?
             </label>
             <textarea className='h-44 border border-neutral-700 p-2'></textarea>
           </div>
+        </div>
+        <div className='flex items-center justify-between'>
+          <div></div>
+          <Link
+            className='mt-7 px-7 py-3 bg-cyan-700 rounded-full text-white font-bold'
+            to='/thanks'
+          >
+            დასრულება
+          </Link>
         </div>
       </form>
     </>
