@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormWrapper } from '../../components';
+import { FormWrapper } from 'components';
 import { VaccineForm, VaccineNavigation } from './components';
 function Vaccine() {
   return (

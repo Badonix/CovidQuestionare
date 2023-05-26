@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormWrapper } from '../../components';
+import { FormWrapper } from 'components';
 import { CovidConditionForm, CovidConditionNavigation } from './components';
 function CovidCondition() {
   return (
