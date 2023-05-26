@@ -3,7 +3,7 @@ import { FormWrapper } from '../../components';
 import { VaccineForm, VaccineNavigation } from './components';
 function Vaccine() {
   return (
-    <FormWrapper>
+    <FormWrapper count={3}>
       <div className='circle-to-star'></div>
       <VaccineForm />
       <div className='flex justify-end image-container relative'>

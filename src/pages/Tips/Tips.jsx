@@ -3,7 +3,7 @@ import { FormWrapper } from '../../components';
 import { TipsForm, TipsNavigation } from './components';
 function Tips() {
   return (
-    <FormWrapper>
+    <FormWrapper count={4}>
       <div className='star-to-heart'></div>
       <TipsForm />
       <div className='flex justify-end image-container relative'>

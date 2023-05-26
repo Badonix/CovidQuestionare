@@ -3,7 +3,7 @@ import { FormWrapper } from '../../components';
 import { PrivateInfoForm, PrivateInfoNavigation } from './components';
 function PrivateInfo() {
   return (
-    <FormWrapper>
+    <FormWrapper count={1}>
       <div className='circle-to-rectangle'></div>
       <PrivateInfoForm />
       <div className='flex justify-end image-container relative'>

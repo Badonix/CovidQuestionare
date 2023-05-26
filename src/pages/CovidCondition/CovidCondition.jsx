@@ -3,7 +3,7 @@ import { FormWrapper } from '../../components';
 import { CovidConditionForm, CovidConditionNavigation } from './components';
 function CovidCondition() {
   return (
-    <FormWrapper>
+    <FormWrapper count={2}>
       <div className='rectangle-to-circle'></div>
       <CovidConditionForm />
       <div className='image-container relative flex justify-end items-center'>
