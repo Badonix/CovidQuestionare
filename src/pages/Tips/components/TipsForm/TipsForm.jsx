@@ -1,8 +1,9 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { FormContext } from 'context';
 function TipsForm() {
-  const { register, handleSubmit } = useForm();
+  const method = useContext(FormContext);
+  const { register, handleSubmit } = method;
   const navigate = useNavigate();
   const onSubmit = (data) => {
     navigate('/thanks');

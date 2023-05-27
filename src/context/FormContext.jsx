@@ -1,18 +1,17 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext } from 'react';
+import { useForm } from 'react-hook-form';
 
-const FormContext = createContext(1);
+const FormContext = createContext();
 
 const FormProvider = ({ children }) => {
-  const [name, setName] = useState('zd');
+  const methods = useForm();
+  const { errors } = methods;
+
   return (
-    <FormContext.Provider value={{ name, setName }}>
+    <FormContext.Provider value={{ ...methods, errors }}>
       {children}
     </FormContext.Provider>
   );
 };
 
-export const useFormContext = () => {
-  return useContext(FormContext);
-};
-
-export { FormProvider };
+export { FormProvider, FormContext };

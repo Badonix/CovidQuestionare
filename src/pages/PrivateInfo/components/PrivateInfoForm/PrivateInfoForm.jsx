@@ -1,22 +1,22 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 import { PrivateInfoNavigation } from '../PrivateInfoNavigation';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { FormContext } from 'context';
 function PrivateInfoForm() {
   const navigate = useNavigate();
+  const methods = useContext(FormContext);
   const {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm();
+  } = methods;
 
   const validateEmail = (email) =>
     email.endsWith('@redberry.ge')
       ? true
       : 'ელფოსტა უნდა დამთავრდეს @redberry.ge-ით';
   const onSubmit = (data) => {
-    console.log(data);
     navigate('/covid-condition');
   };
   return (

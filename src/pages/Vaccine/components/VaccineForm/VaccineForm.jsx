@@ -1,9 +1,11 @@
-import React from 'react';
 import { VaccineNavigation } from '../VaccineNavigation';
-import { useForm, useWatch } from 'react-hook-form';
+import { useWatch } from 'react-hook-form';
+import { useContext } from 'react';
+import { FormContext } from 'context';
 import { useNavigate } from 'react-router-dom';
 function VaccineForm() {
-  const { register, control, handleSubmit, reset, setValue } = useForm();
+  const method = useContext(FormContext);
+  const { register, control, handleSubmit, reset, setValue } = method;
   const isVaccinated = useWatch({ control, name: 'vaccinated' });
   const step = useWatch({ control, name: 'step' });
   const waitingFor = useWatch({ control, name: 'waitingFor' });
