@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { CovidConditionNavigation } from '../CovidConditionNavigation';
 function CovidConditionForm() {
   return (
     <form className='w-full h-auto max-w-lg flex flex-col justify-between'>
@@ -68,6 +68,8 @@ function CovidConditionForm() {
           *-ით მონიშნული ველების შევსება სავალდებულოა
         </p>
       </div>
+
+      <CovidConditionNavigation />
     </form>
   );
 }

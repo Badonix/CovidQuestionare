@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormWrapper } from 'components';
-import { CovidConditionForm, CovidConditionNavigation } from './components';
+import { CovidConditionForm } from './components';
 function CovidCondition() {
   return (
     <FormWrapper count={2}>
@@ -13,7 +13,6 @@ function CovidCondition() {
           alt='sick guy'
         />
       </div>
-      <CovidConditionNavigation />
     </FormWrapper>
   );
 }
