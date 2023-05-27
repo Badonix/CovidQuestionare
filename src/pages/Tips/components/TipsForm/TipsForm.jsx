@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 function TipsForm() {
   const { register, handleSubmit } = useForm();
-
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    console.log(data);
+    navigate('/thanks');
   };
   return (
     <>
