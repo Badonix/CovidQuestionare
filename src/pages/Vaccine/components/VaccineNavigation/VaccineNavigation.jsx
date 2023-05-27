@@ -6,9 +6,9 @@ function VaccineNavigation() {
       <Link to='/covid-condition'>
         <img src='/assets/LeftArrow.svg' alt='left arrow' />
       </Link>
-      <Link to='/tips'>
+      <button type='submit'>
         <img src='/assets/RightArrow.svg' alt='right arrow' />
-      </Link>
+      </button>
     </div>
   );
 }

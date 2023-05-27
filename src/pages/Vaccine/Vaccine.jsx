@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormWrapper } from 'components';
-import { VaccineForm, VaccineNavigation } from './components';
+import { VaccineForm } from './components';
 function Vaccine() {
   return (
     <FormWrapper count={3}>
@@ -13,7 +13,6 @@ function Vaccine() {
           alt='doctor'
         />
       </div>
-      <VaccineNavigation />
     </FormWrapper>
   );
 }
