@@ -1,26 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { CovidConditionNavigation } from '../CovidConditionNavigation';
-import { useWatch } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { ErrorMessage } from '@hookform/error-message';
-import { FormContext } from 'context';
+import { useCovidConditionForm } from './useCovidConditionForm';
 function CovidConditionForm() {
-  const methods = useContext(FormContext);
-
   const {
     register,
-    control,
-    handleSubmit,
     reset,
+    handleSubmit,
     setValue,
-    formState: { errors },
-  } = methods;
-  const hadCovid = useWatch({ control, name: 'hadCovid' });
-  const hadAntibodyTest = useWatch({ control, name: 'antiBody' });
-  const navigate = useNavigate();
-  const onSubmit = (data) => {
-    navigate('/vaccine');
-  };
+    errors,
+    hadCovid,
+    hadAntibodyTest,
+    onSubmit,
+  } = useCovidConditionForm();
 
   return (
     <form

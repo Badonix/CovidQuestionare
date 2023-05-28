@@ -1,24 +1,9 @@
 import { ErrorMessage } from '@hookform/error-message';
 import { PrivateInfoNavigation } from '../PrivateInfoNavigation';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { FormContext } from 'context';
+import { usePrivateInfoForm } from './usePrivateInfoForm';
 function PrivateInfoForm() {
-  const navigate = useNavigate();
-  const methods = useContext(FormContext);
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = methods;
-
-  const validateEmail = (email) =>
-    email.endsWith('@redberry.ge')
-      ? true
-      : 'ელფოსტა უნდა დამთავრდეს @redberry.ge-ით';
-  const onSubmit = (data) => {
-    navigate('/covid-condition');
-  };
+  const { register, errors, handleSubmit, validateEmail, onSubmit } =
+    usePrivateInfoForm();
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
