@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormWrapper } from 'components';
-import { PrivateInfoForm, PrivateInfoNavigation } from './components';
+import { FormWrapper } from '@/components';
+import { PrivateInfoForm } from './components';
 function PrivateInfo() {
   return (
     <FormWrapper count={1}>
@@ -13,7 +13,6 @@ function PrivateInfo() {
           alt='doctors'
         />
       </div>
-      <PrivateInfoNavigation />
     </FormWrapper>
   );
 }
