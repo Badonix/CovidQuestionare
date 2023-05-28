@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { FormContext } from 'context';
+import { FormContext } from 'src/context';
 
 export const usePrivateInfoForm = () => {
   const navigate = useNavigate();
