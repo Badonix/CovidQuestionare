@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FormContext } from 'src/context';
+import { FormContext } from '@/context';
 import { useNavigate } from 'react-router-dom';
 export const useTipsForm = () => {
   const method = useContext(FormContext);

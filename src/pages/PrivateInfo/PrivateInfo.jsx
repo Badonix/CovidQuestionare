@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormWrapper } from 'src/components';
+import { FormWrapper } from '@/components';
 import { PrivateInfoForm } from './components';
 function PrivateInfo() {
   return (

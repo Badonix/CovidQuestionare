@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormContext } from 'src/context';
+import { FormContext } from '@/context';
 import { useWatch } from 'react-hook-form';
 
 export const useCovidConditionForm = () => {
