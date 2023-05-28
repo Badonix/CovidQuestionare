@@ -51,7 +51,6 @@ function PrivateInfoForm() {
           <input
             {...register('email', {
               required: 'ელფოსტის ველი აუცილებელია',
-              minLength: {},
               validate: validateEmail,
             })}
             className='px-2 py-2 border border-neutral-700 bg-transparent outline-none'

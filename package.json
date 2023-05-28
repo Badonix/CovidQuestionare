@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.1",

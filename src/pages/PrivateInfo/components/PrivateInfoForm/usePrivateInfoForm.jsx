@@ -15,7 +15,7 @@ export const usePrivateInfoForm = () => {
     email.endsWith('@redberry.ge')
       ? true
       : 'ელფოსტა უნდა დამთავრდეს @redberry.ge-ით';
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     navigate('/covid-condition');
   };
 
