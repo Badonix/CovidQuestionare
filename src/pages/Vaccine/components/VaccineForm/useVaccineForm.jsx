@@ -1,15 +1,13 @@
-import { useContext, useEffect } from 'react';
-import { FormContext } from '@/context';
-import { useWatch } from 'react-hook-form';
+import { useEffect } from 'react';
+import { useFormContext, useWatch } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 export const useVaccineForm = () => {
-  const method = useContext(FormContext);
-  const { register, control, handleSubmit, reset, setValue } = method;
-  const isVaccinated = useWatch({ control, name: 'vaccinated' });
-  const step = useWatch({ control, name: 'step' });
-  const waitingFor = useWatch({ control, name: 'waitingFor' });
+  const { register, handleSubmit, reset, setValue } = useFormContext();
+  const isVaccinated = useWatch({ name: 'vaccinated' });
+  const step = useWatch({ name: 'step' });
+  const waitingFor = useWatch({ name: 'waitingFor' });
   const navigate = useNavigate();
-  const watchedFields = useWatch({ control });
+  const watchedFields = useWatch();
 
   useEffect(() => {
     const vaccineData = JSON.parse(localStorage.getItem('vaccine'));

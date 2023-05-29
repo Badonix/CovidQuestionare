@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { FormContext } from '@/context';
 import { useEffect } from 'react';
-import { useWatch } from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 export const usePrivateInfoForm = () => {
   const navigate = useNavigate();
-  const methods = useContext(FormContext);
-  const { control, setValue } = methods;
-  const watchedFields = useWatch({ control });
+  const {
+    setValue,
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useFormContext();
+  const watchedFields = useWatch();
 
   useEffect(() => {
     const privateInfoData = JSON.parse(localStorage.getItem('privateInfo'));
@@ -22,12 +24,6 @@ export const usePrivateInfoForm = () => {
   useEffect(() => {
     localStorage.setItem('privateInfo', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
-
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = methods;
 
   const validateEmail = (email) =>
     email.endsWith('@redberry.ge')

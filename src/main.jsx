@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import { FormProvider } from '@/context';
+// import { FormProvider } from '@/context';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <FormProvider>
-      <App />
-    </FormProvider>
+    {/* <FormProvider> */}
+    <App />
+    {/* </FormProvider> */}
   </React.StrictMode>
 );
