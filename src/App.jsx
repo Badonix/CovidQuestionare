@@ -1,7 +1,13 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Landing, PrivateInfo, Vaccine, Tips, Thanks } from './pages';
-import { CovidCondition } from './pages/CovidCondition';
+import {
+  Landing,
+  PrivateInfo,
+  Vaccine,
+  Tips,
+  Thanks,
+  CovidCondition,
+} from './pages';
 function App() {
   return (
     <BrowserRouter>
