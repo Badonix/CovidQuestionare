@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { usePostData } from './usePostData';
 function Thanks() {
+  usePostData();
   return (
     <section className='bg-neutral-800 h-screen flex items-center justify-center'>
       <div className='relative thanks-container'>

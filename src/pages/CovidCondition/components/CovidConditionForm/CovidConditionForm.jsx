@@ -50,12 +50,12 @@ function CovidConditionForm() {
           <div className='flex items-center gap-3'>
             <input
               {...register('hadCovid', { required: true })}
-              value='now'
+              value='have_right_now'
               type='radio'
               className='w-6 h-6'
               onChange={() => {
                 hadCovid === 'yes' && reset();
-                setValue('hadCovid', 'now');
+                setValue('hadCovid', 'have_right_now');
               }}
             />
             <label>ახლა მაქვს</label>
@@ -97,7 +97,7 @@ function CovidConditionForm() {
               {...register('antibodyDate')}
               className='px-2 py-2 border border-neutral-700 bg-transparent outline-none'
               placeholder='რიცხვი'
-              type='text'
+              type='date'
             />
             <input
               {...register('amount')}
@@ -115,14 +115,10 @@ function CovidConditionForm() {
             <input
               {...register('covidDate', {
                 required: 'თარიღის ველი აუცილებელია',
-                pattern: {
-                  value: /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{2}$/,
-                  message: 'არასწორი თარიღის ფორმატი',
-                },
               })}
               className='px-2 py-2 border border-neutral-700 bg-transparent outline-none'
               placeholder='დდ/თთ/წწ'
-              type='text'
+              type='date'
             />
             <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
               <ErrorMessage errors={errors} name={'covidDate'} />

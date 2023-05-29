@@ -9,7 +9,7 @@ export const useVaccineForm = () => {
   const step = useWatch({ control, name: 'step' });
   const waitingFor = useWatch({ control, name: 'waitingFor' });
   const navigate = useNavigate();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     navigate('/tips');
   };
   return {

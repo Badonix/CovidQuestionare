@@ -16,7 +16,7 @@ export const useCovidConditionForm = () => {
   const hadCovid = useWatch({ control, name: 'hadCovid' });
   const hadAntibodyTest = useWatch({ control, name: 'antiBody' });
   const navigate = useNavigate();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     navigate('/vaccine');
   };
   return {

@@ -5,7 +5,7 @@ export const useTipsForm = () => {
   const method = useContext(FormContext);
   const { register, handleSubmit } = method;
   const navigate = useNavigate();
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     navigate('/thanks');
   };
   return {

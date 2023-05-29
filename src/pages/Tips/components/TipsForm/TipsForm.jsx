@@ -28,7 +28,7 @@ function TipsForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('onlineMeets', { required: true })}
-                value={'twice a week'}
+                value={'twice_a_week'}
                 type='radio'
                 className='w-6 h-6'
               />
@@ -37,7 +37,7 @@ function TipsForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('onlineMeets', { required: true })}
-                value={'once a week'}
+                value={'once_a_week'}
                 type='radio'
                 className='w-6 h-6'
               />
@@ -46,7 +46,7 @@ function TipsForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('onlineMeets', { required: true })}
-                value={'once in a 2 week'}
+                value={'once_in_a_two_weeks'}
                 type='radio'
                 className='w-6 h-6'
               />
@@ -55,7 +55,7 @@ function TipsForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('onlineMeets', { required: true })}
-                value={'once a month'}
+                value={'once_in_a_month'}
                 type='radio'
                 className='w-6 h-6'
               />

@@ -52,7 +52,7 @@ function VaccineForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('step', { required: true })}
-                value='first dose completed, registered on second'
+                value='first_dosage_and_registered_on_the_second'
                 type='radio'
                 className='w-6 h-6'
               />
@@ -63,7 +63,7 @@ function VaccineForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('step', { required: true })}
-                value='fully vaccinated'
+                value='fully_vaccinated'
                 type='radio'
                 className='w-6 h-6'
               />
@@ -73,7 +73,7 @@ function VaccineForm() {
               <div className='flex items-center gap-3'>
                 <input
                   {...register('step', { required: true })}
-                  value='first dose completed, not registered on second'
+                  value='first_dosage_and_not_registered_yet'
                   type='radio'
                   className='w-6 h-6'
                 />
@@ -81,7 +81,7 @@ function VaccineForm() {
                   პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე
                 </label>
               </div>
-              {step === 'first dose completed, not registered on second' && (
+              {step === 'first_dosage_and_not_registered_yet' && (
                 <>
                   <p className='ml-6 mt-4 max-w-230 text-xl '>
                     რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი
@@ -104,7 +104,7 @@ function VaccineForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('waitingFor', { required: true })}
-                value='registered and waiting'
+                value='registered_and_waiting'
                 type='radio'
                 className='w-6 h-6'
               />
@@ -115,7 +115,7 @@ function VaccineForm() {
             <div className='flex items-center gap-3'>
               <input
                 {...register('waitingFor', { required: true })}
-                value='not going to'
+                value='not_planning'
                 type='radio'
                 className='w-6 h-6'
               />
@@ -125,7 +125,7 @@ function VaccineForm() {
               <div className='flex items-center gap-3 mb-6'>
                 <input
                   {...register('waitingFor', { required: true })}
-                  value='already had and going to get vaccinated'
+                  value='had_covid_and_planning_to_be_vaccinated'
                   type='radio'
                   className='w-6 h-6'
                 />
@@ -133,7 +133,7 @@ function VaccineForm() {
                   გადატანილი მაქვს და ვგეგმავ აცრას
                 </label>
               </div>
-              {waitingFor === 'already had and going to get vaccinated' && (
+              {waitingFor === 'had_covid_and_planning_to_be_vaccinated' && (
                 <a
                   className='ml-6 text-xl text-blue-500'
                   href='https://booking.moh.gov.ge/'
