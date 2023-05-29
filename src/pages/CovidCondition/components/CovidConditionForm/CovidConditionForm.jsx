@@ -3,17 +3,16 @@ import { CovidConditionNavigation } from '../CovidConditionNavigation';
 import { ErrorMessage } from '@hookform/error-message';
 import { useCovidConditionForm } from './useCovidConditionForm';
 function CovidConditionForm() {
-  const {
+  let {
     register,
     reset,
     handleSubmit,
     setValue,
     errors,
-    hadCovid,
     hadAntibodyTest,
     onSubmit,
+    hadCovid,
   } = useCovidConditionForm();
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -61,8 +60,7 @@ function CovidConditionForm() {
             <label>ახლა მაქვს</label>
           </div>
         </div>
-
-        {hadCovid === 'yes' && hadCovid === 'yes' && (
+        {hadCovid === 'yes' && (
           <div className='flex flex-col gap-5'>
             <label className='text-xl font-bold'>
               ანტისხეულების ტესტი გაქვს გაკეთებული?*
