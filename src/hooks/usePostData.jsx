@@ -43,7 +43,7 @@ export const usePostData = () => {
       data.i_am_waiting = formData.waitingFor;
     }
     try {
-      console.log(getData(data));
+      getData(data);
     } catch (e) {
       console.log(e);
     }
