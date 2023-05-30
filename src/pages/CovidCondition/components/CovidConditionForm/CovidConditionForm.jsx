@@ -27,29 +27,32 @@ function CovidConditionForm() {
             <input
               {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='yes'
+              id='had-covid'
               name='hadCovid'
               type='radio'
               className='w-6 h-6'
             />
-            <label>კი</label>
+            <label htmlFor='had-covid'>კი</label>
           </div>
           <div className='flex items-center gap-3'>
             <input
               {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='no'
               type='radio'
+              id='not-had-covid'
               className='w-6 h-6'
               onChange={() => {
                 hadCovid === 'yes' && reset();
                 setValue('hadCovid', 'no');
               }}
             />
-            <label>არა</label>
+            <label htmlFor='not-had-covid'>არა</label>
           </div>
           <div className='flex items-center gap-3'>
             <input
               {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='have_right_now'
+              id='have_right_now'
               type='radio'
               className='w-6 h-6'
               onChange={() => {
@@ -57,7 +60,7 @@ function CovidConditionForm() {
                 setValue('hadCovid', 'have_right_now');
               }}
             />
-            <label>ახლა მაქვს</label>
+            <label htmlFor='have_right_now'>ახლა მაქვს</label>
           </div>
           <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
             <ErrorMessage errors={errors} name={'hadCovid'} />
@@ -72,19 +75,21 @@ function CovidConditionForm() {
               <input
                 {...register('antiBody', { required: 'ეს ველი აუცილებელია' })}
                 value='yes'
+                id='antibody'
                 type='radio'
                 className='w-6 h-6'
               />
-              <label>კი</label>
+              <label htmlFor='antibody'>კი</label>
             </div>
             <div className='flex items-center gap-3'>
               <input
                 {...register('antiBody', { required: 'ეს ველი აუცილებელია' })}
                 value='no'
+                id='no-antibody'
                 type='radio'
                 className='w-6 h-6'
               />
-              <label>არა</label>
+              <label htmlFor='no-antibody'>არა</label>
             </div>
             <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
               <ErrorMessage errors={errors} name={'antiBody'} />
