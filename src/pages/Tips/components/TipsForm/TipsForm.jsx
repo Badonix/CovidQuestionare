@@ -1,6 +1,7 @@
 import { useTipsForm } from './useTipsForm';
+import { ErrorMessage } from '@hookform/error-message';
 function TipsForm() {
-  const { handleSubmit, onSubmit, register } = useTipsForm();
+  const { handleSubmit, onSubmit, register, errors } = useTipsForm();
   return (
     <>
       <form
@@ -20,14 +21,16 @@ function TipsForm() {
               ყოველდღიური კომუნიკაციაც გაიშვიათდა.
             </p>
           </div>
-          <div className='flex flex-col gap-5 pt-4'>
+          <div className='flex flex-col gap-5 pt-4 relative'>
             <label className='text-xl font-bold'>
               რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ
               შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*
             </label>
             <div className='flex items-center gap-3'>
               <input
-                {...register('onlineMeets', { required: true })}
+                {...register('onlineMeets', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={'twice_a_week'}
                 type='radio'
                 className='w-6 h-6'
@@ -36,7 +39,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('onlineMeets', { required: true })}
+                {...register('onlineMeets', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={'once_a_week'}
                 type='radio'
                 className='w-6 h-6'
@@ -45,7 +50,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('onlineMeets', { required: true })}
+                {...register('onlineMeets', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={'once_in_a_two_weeks'}
                 type='radio'
                 className='w-6 h-6'
@@ -54,21 +61,28 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('onlineMeets', { required: true })}
+                {...register('onlineMeets', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={'once_in_a_month'}
                 type='radio'
                 className='w-6 h-6'
               />
               <label className='text-xl'>თვეში ერთხელ</label>
             </div>
+            <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
+              <ErrorMessage errors={errors} name={'onlineMeets'} />
+            </p>
           </div>
-          <div className='flex flex-col gap-5 pt-4'>
+          <div className='flex flex-col gap-5 pt-4 relative'>
             <label className='text-xl font-bold'>
               კვირაში რამდენი დღე ისუვრებდი ოფისიდან მუშაობას?*
             </label>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={0}
                 type='radio'
                 className='w-6 h-6'
@@ -77,7 +91,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={1}
                 type='radio'
                 className='w-6 h-6'
@@ -86,7 +102,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={2}
                 type='radio'
                 className='w-6 h-6'
@@ -95,7 +113,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={3}
                 type='radio'
                 className='w-6 h-6'
@@ -104,7 +124,9 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={4}
                 type='radio'
                 className='w-6 h-6'
@@ -113,13 +135,18 @@ function TipsForm() {
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('offlineDays', { required: true })}
+                {...register('offlineDays', {
+                  required: 'ეს ველი აუცილებელია',
+                })}
                 value={5}
                 type='radio'
                 className='w-6 h-6'
               />
               <label className='text-xl'>5</label>
             </div>
+            <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
+              <ErrorMessage errors={errors} name={'offlineDays'} />
+            </p>
           </div>
           <div className='flex flex-col gap-5 pt-4'>
             <label className='text-xl font-bold'>
