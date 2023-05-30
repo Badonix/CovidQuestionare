@@ -1,22 +1,17 @@
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FormContext } from '@/context';
-import { useWatch } from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 import { useEffect } from 'react';
 export const useCovidConditionForm = () => {
-  const methods = useContext(FormContext);
   const {
     register,
-    control,
     handleSubmit,
     reset,
     setValue,
     formState: { errors },
-  } = methods;
-  const hadCovid = useWatch({ control, name: 'hadCovid' });
-  const hadAntibodyTest = useWatch({ control, name: 'antiBody' });
-  const watchedFields = useWatch({ control });
-
+  } = useFormContext();
+  const watchedFields = useWatch();
+  const hadCovid = watchedFields.hadCovid;
+  const hadAntibodyTest = watchedFields.antiBody;
   useEffect(() => {
     const covidConditionData = JSON.parse(
       localStorage.getItem('covidCondition')

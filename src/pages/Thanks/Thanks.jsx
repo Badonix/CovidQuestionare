@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePostData } from './usePostData';
+import { usePostData } from '@/hooks';
 function Thanks() {
   usePostData();
   return (

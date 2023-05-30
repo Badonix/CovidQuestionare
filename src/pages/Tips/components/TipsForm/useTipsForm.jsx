@@ -1,12 +1,10 @@
-import { useContext, useEffect } from 'react';
-import { FormContext } from '@/context';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useWatch } from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 export const useTipsForm = () => {
-  const method = useContext(FormContext);
-  const { register, handleSubmit, control, setValue } = method;
+  const { register, handleSubmit, setValue } = useFormContext();
   const navigate = useNavigate();
-  const watchedFields = useWatch({ control });
+  const watchedFields = useWatch();
 
   useEffect(() => {
     const tipsData = JSON.parse(localStorage.getItem('tips'));
