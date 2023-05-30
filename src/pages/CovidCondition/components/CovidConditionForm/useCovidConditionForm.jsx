@@ -9,10 +9,9 @@ export const useCovidConditionForm = () => {
     setValue,
     formState: { errors },
   } = useFormContext();
-  const hadCovid = useWatch({ name: 'hadCovid' });
-  const hadAntibodyTest = useWatch({ name: 'antiBody' });
-  const watchedFields = useWatch({});
-
+  const watchedFields = useWatch();
+  const hadCovid = watchedFields.hadCovid;
+  const hadAntibodyTest = watchedFields.antiBody;
   useEffect(() => {
     const covidConditionData = JSON.parse(
       localStorage.getItem('covidCondition')
