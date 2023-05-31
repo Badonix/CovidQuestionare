@@ -1,9 +1,17 @@
 import { useTipsForm } from './useTipsForm';
 import { ErrorMessage } from '@hookform/error-message';
 function TipsForm() {
-  const { handleSubmit, onSubmit, register, errors } = useTipsForm();
+  const { handleSubmit, onSubmit, register, errors, hasSubmited } =
+    useTipsForm();
   return (
     <>
+      <div
+        className={`absolute opacity-0 right-1/4 top-1/4 w-44 h-44 ${
+          hasSubmited && 'heart-growing'
+        }`}
+      >
+        <img src='/assets/heart.png' alt='heart' />
+      </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='relative overflow-y-auto overflow-x-hidden w-full h-auto flex flex-col'
