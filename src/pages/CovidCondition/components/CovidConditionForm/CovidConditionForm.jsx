@@ -19,37 +19,40 @@ function CovidConditionForm() {
       className='w-full h-auto max-w-lg flex flex-col justify-between'
     >
       <div className='flex flex-col gap-11 pt-8'>
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-5  relative'>
           <label className='text-xl font-bold'>
             გაქვს გადატანილი Covid-19?*
           </label>
           <div className='flex items-center gap-3'>
             <input
-              {...register('hadCovid', { required: true })}
+              {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='yes'
+              id='had-covid'
               name='hadCovid'
               type='radio'
               className='w-6 h-6'
             />
-            <label>კი</label>
+            <label htmlFor='had-covid'>კი</label>
           </div>
           <div className='flex items-center gap-3'>
             <input
-              {...register('hadCovid', { required: true })}
+              {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='no'
               type='radio'
+              id='not-had-covid'
               className='w-6 h-6'
               onChange={() => {
                 hadCovid === 'yes' && reset();
                 setValue('hadCovid', 'no');
               }}
             />
-            <label>არა</label>
+            <label htmlFor='not-had-covid'>არა</label>
           </div>
           <div className='flex items-center gap-3'>
             <input
-              {...register('hadCovid', { required: true })}
+              {...register('hadCovid', { required: 'ეს ველი აუცილებელია' })}
               value='have_right_now'
+              id='have_right_now'
               type='radio'
               className='w-6 h-6'
               onChange={() => {
@@ -57,36 +60,44 @@ function CovidConditionForm() {
                 setValue('hadCovid', 'have_right_now');
               }}
             />
-            <label>ახლა მაქვს</label>
+            <label htmlFor='have_right_now'>ახლა მაქვს</label>
           </div>
+          <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
+            <ErrorMessage errors={errors} name={'hadCovid'} />
+          </p>
         </div>
         {hadCovid === 'yes' && (
-          <div className='flex flex-col gap-5'>
+          <div className='flex flex-col gap-5 relative'>
             <label className='text-xl font-bold'>
               ანტისხეულების ტესტი გაქვს გაკეთებული?*
             </label>
             <div className='flex items-center gap-3'>
               <input
-                {...register('antiBody', { required: true })}
+                {...register('antiBody', { required: 'ეს ველი აუცილებელია' })}
                 value='yes'
+                id='antibody'
                 type='radio'
                 className='w-6 h-6'
               />
-              <label>კი</label>
+              <label htmlFor='antibody'>კი</label>
             </div>
             <div className='flex items-center gap-3'>
               <input
-                {...register('antiBody', { required: true })}
+                {...register('antiBody', { required: 'ეს ველი აუცილებელია' })}
                 value='no'
+                id='no-antibody'
                 type='radio'
                 className='w-6 h-6'
               />
-              <label>არა</label>
+              <label htmlFor='no-antibody'>არა</label>
             </div>
+            <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
+              <ErrorMessage errors={errors} name={'antiBody'} />
+            </p>
           </div>
         )}
         {hadAntibodyTest === 'yes' && hadCovid === 'yes' && (
-          <div className='flex flex-col gap-6 '>
+          <div className='flex flex-col gap-6 relative'>
             <label className='text-xl font-bold'>
               თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და
               ანტისხეულების რაოდენობა

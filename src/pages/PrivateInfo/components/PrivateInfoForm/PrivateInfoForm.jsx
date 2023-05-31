@@ -52,10 +52,14 @@ function PrivateInfoForm() {
             {...register('email', {
               required: 'ელფოსტის ველი აუცილებელია',
               validate: validateEmail,
+              pattern: {
+                value:
+                  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                message: 'ელფოსტა უნდა იყოს ვალიდური',
+              },
             })}
             className='px-2 py-2 border border-neutral-700 bg-transparent outline-none'
             placeholder='fbi@redberry.ge'
-            type='email'
           />
           <p className='text-orange-600 whitespace-nowrap text-base ml-2 absolute -bottom-8'>
             <ErrorMessage errors={errors} name={'email'} />
