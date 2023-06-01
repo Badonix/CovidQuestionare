@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormContext, useWatch } from 'react-hook-form';
 export const useTipsForm = () => {
+  const [hasSubmited, setHasSubmited] = useState(false);
   const { register, handleSubmit, setValue } = useFormContext();
   const navigate = useNavigate();
   const watchedFields = useWatch();
@@ -20,11 +21,15 @@ export const useTipsForm = () => {
     localStorage.setItem('tips', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
   const onSubmit = (data) => {
-    navigate('/thanks');
+    setHasSubmited(true);
+    setTimeout(() => {
+      navigate('/thanks');
+    }, 2000);
   };
   return {
     register,
     handleSubmit,
     onSubmit,
+    hasSubmited,
   };
 };

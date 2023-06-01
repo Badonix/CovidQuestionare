@@ -86,6 +86,44 @@ input[type='radio'] {
   }
 }
 
+.heart-growing{
+  animation: heart-growing 2s forwards ease-in-out;
+  position: absolute;
+  z-index: 20;
+}
+.heart-growing img{
+  animation: heart-growing-image 2s ease-in-out;
+  scale: 0;
+}
+@keyframes heart-growing-image {
+  0%{
+    scale: 1
+  }
+  99%{
+    scale :1
+  }
+  100%{
+    filter:grayscale(100%) brightness(.2);
+  }
+}
+
+@keyframes heart-growing {
+  0%{
+    opacity: 1;
+  }
+  90%{
+    background-color: transparent;
+  }
+  100%{
+    scale: 18;
+    opacity: 1;
+    top:70%;
+    right:50%;
+    opacity: 1;
+    background-color: rgb(38 38 38);
+
+  }
+}
 
 .zoom {
   animation: zoom-out 2s ease-in-out forwards;
