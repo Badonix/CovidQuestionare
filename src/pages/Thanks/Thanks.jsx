@@ -1,6 +1,8 @@
 import React from 'react';
+import { useThanks } from './useThanks';
 import { usePostData } from '@/hooks';
 function Thanks() {
+  useThanks();
   usePostData();
   return (
     <section className='bg-neutral-800 h-screen flex items-center justify-center'>

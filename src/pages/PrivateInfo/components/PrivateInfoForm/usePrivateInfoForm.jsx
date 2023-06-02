@@ -24,14 +24,15 @@ export const usePrivateInfoForm = () => {
   useEffect(() => {
     localStorage.setItem('privateInfo', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
-
   const validateEmail = (email) =>
     email.endsWith('@redberry.ge')
       ? true
       : 'ელფოსტა უნდა დამთავრდეს @redberry.ge-ით';
   const onSubmit = (data) => {
+    localStorage.setItem('private_validated', true);
     navigate('/covid-condition');
   };
+  errors && localStorage.setItem('private_validated', false);
 
   return {
     register,
