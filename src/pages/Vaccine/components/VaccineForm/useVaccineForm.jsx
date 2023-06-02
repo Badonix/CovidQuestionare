@@ -16,16 +16,6 @@ export const useVaccineForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const vaccineData = JSON.parse(localStorage.getItem('vaccine'));
-
-    if (vaccineData) {
-      Object.entries(vaccineData).forEach(([key, value]) => {
-        setValue(key, value);
-      });
-    }
-  }, [setValue]);
-
-  useEffect(() => {
     localStorage.setItem('vaccine', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
   useEffect(() => {

@@ -11,7 +11,13 @@ import {
 import { useForm, FormProvider } from 'react-hook-form';
 
 function App() {
-  const methods = useForm();
+  const defaultValues = {
+    ...JSON.parse(localStorage.getItem('privateInfo')),
+    ...JSON.parse(localStorage.getItem('privateInfo')),
+    ...JSON.parse(localStorage.getItem('vaccine')),
+    ...JSON.parse(localStorage.getItem('tips')),
+  };
+  const methods = useForm({ defaultValues });
   return (
     <BrowserRouter>
       <FormProvider {...methods}>

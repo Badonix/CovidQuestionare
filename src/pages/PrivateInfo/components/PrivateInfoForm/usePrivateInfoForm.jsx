@@ -12,16 +12,6 @@ export const usePrivateInfoForm = () => {
   const watchedFields = useWatch();
 
   useEffect(() => {
-    const privateInfoData = JSON.parse(localStorage.getItem('privateInfo'));
-
-    if (privateInfoData) {
-      Object.entries(privateInfoData).forEach(([key, value]) => {
-        setValue(key, value);
-      });
-    }
-  }, [setValue]);
-
-  useEffect(() => {
     localStorage.setItem('privateInfo', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
   const validateEmail = (email) =>
