@@ -28,9 +28,17 @@ export const useCovidConditionForm = () => {
     localStorage.setItem('covidCondition', JSON.stringify(watchedFields));
   }, [watchedFields, setValue]);
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('private_validated') != 'true') {
+      navigate('/privateinfo');
+    }
+  });
   const onSubmit = (data) => {
+    localStorage.setItem('condition_validated', true);
     navigate('/vaccine');
   };
+  errors && localStorage.setItem('condition_validated', false);
+
   return {
     register,
     handleSubmit,
